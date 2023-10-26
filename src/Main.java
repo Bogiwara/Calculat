@@ -14,6 +14,10 @@ public class Main {
         String[] knownRomans = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String[] operands = input.split("[-+*/\\s]+");
 
+        if (operands.length != 2) {
+            throw new IllegalArgumentException("Only two operands are allowed");
+        }
+
         if (isInArray(operands[0].trim(), knownRomans) && isInArray(operands[1].trim(), knownRomans)) {
             isRoman = true;
         }
